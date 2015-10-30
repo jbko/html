@@ -1,0 +1,201 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title></title>
+<link href="css/reset.css" rel="stylesheet" type="text/css">
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!-- ページ内リンク jQuery -->
+<!-- http://kyasper.com/jquery-tips/ -->
+
+<!-- スムーズスクロール部分の記述 -->
+<script>
+$(function(){
+   // #で始まるアンカーをクリックした場合に処理
+   $('a[href^=#]').click(function() {
+      // スクロールの速度
+      var speed = 400; // ミリ秒
+      // アンカーの値取得
+      var href= $(this).attr("href");
+      // 移動先を取得
+      var target = $(href == "#" || href == "" ? 'html' : href);
+      // 移動先を数値で取得
+      var position = target.offset().top;
+      // スムーススクロール
+      $('body,html').animate({scrollTop:position}, speed, 'swing');
+      return false;
+   });
+});
+</script>
+
+<!-- topへ戻る jQuery -->
+<!-- http://3924ffa5043516b2.lolipop.jp/web_cafe/?p=205 -->
+<script>
+$(document).ready(function(){
+ 
+    var pagetop = $('.pagetop');
+ 
+    $(window).scroll(function(){
+        if ( $(this).scrollTop() > 500 ) {							//何ピクセル行くと表示するかを設定
+            pagetop.fadeIn();
+        } else {
+            pagetop.fadeOut();
+        }
+    });
+	
+	/* 
+    pagetop.click(function () {
+        $('body, html').animate({ scrollTop: 0 }, 500);		//スピードの設定？？？
+        return false;
+    });
+	*/
+ 
+});
+</script>
+
+
+<!-- ページ固定　途中から -->
+<!-- http://web-pc.net/jquery008 -->
+<script>
+jQuery(function($) {
+  
+var nav    = $('#header_nav'),
+    offset = nav.offset();
+  
+$(window).scroll(function () {
+  if($(window).scrollTop() > offset.top) {
+    nav.addClass('fixed');
+  } else {
+    nav.removeClass('fixed');
+  }
+});
+  
+});
+</script>
+
+
+<!-- スクロールするとついてくるやつ -->
+<!--
+http://blog.echoenduring.com/2010/11/15/freebie-contained-sticky-scroll-jquery-plugin/
+http://blog.echoenduring.com/wp-content/uploads/demos/echo_ContainedStickyScroll/
+-->
+<script type="text/javascript" src="js/jquery-contained-sticky-scroll.js"></script>
+<script>
+jQuery(function($){
+$('#side_column').containedStickyScroll({
+        duration: 300,
+        unstick: true,
+        closeChar: 'x' 
+    });
+});
+</script>
+
+</head>
+
+<body>
+<header>
+	<div class="inner">
+		<h1>復習 Web 2014/12/02</h1>
+	</div>
+</header>
+<div id="header_nav">
+	<div class="inner">
+		<ul>
+			<li><a href="#topic1">MENU1</a></li>
+			<li><a href="#topic2">MENU2</a></li>
+			<li><a href="#topic3">MENU3</a></li>
+			<li><a href="#topic4">MENU4</a></li>
+		</ul>
+	</div>
+</div>
+<div id="top_main">
+	<div class="inner"> id "top_main" の内容がここに入ります</div>
+</div>
+<div id="wrapper" class="cf">
+	<div id="side_column">
+		<nav>
+			<ul>
+				<li><a href="#">HOME</a></li>
+				<li><a href="#">PRODUCTS</a></li>
+				<li><a href="#">SERVICE</a></li>
+				<li><a href="#">SUPPORT</a></li>
+				<li><a href="#">COMPANY</a></li>
+				<li><a href="#">CONTACT</a></li>
+			</ul>
+		</nav>
+	</div>
+	<div id="content">
+		<main>
+			<section>
+				<article id="topic1">
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article id="topic2">
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article id="topic3">
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article id="topic4">
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article>
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article>
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article>
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article>
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article>
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+				<article>
+					<h1>最強菓子「ねるねるねるね」はいかに生まれたか</h1>
+					<p>小さな子に何かあげるとき、どんな子でも絶対に喜ぶ鉄板アイテムといえば、「ねるねるねるね」だと思う。</p>
+					<p>「『ねるねるねるね』さえあれば、ウチの子はご機嫌」と言うママも多いし、嫌いな子は見たことがない。中学2年生の我が子だって、相変わらず「ねるねるねるね」は大好きだ。</p>
+					<p>それにしても、ロングセラー＆ベストセラーのこの商品、いったいどのように生まれたものなのか</p>
+				</article>
+			</section>
+		</main>
+	</div>
+</div>
+<footer>
+	<div class="inner">新規 footer タグの内容がここに入ります</div>
+</footer>
+<p class="pagetop"><a href="#">▲</a></p>
+</body>
+</html>
